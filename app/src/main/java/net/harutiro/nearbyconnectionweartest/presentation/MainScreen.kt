@@ -11,7 +11,6 @@ import androidx.wear.compose.foundation.lazy.ScalingLazyColumn
 import androidx.wear.compose.foundation.lazy.ScalingLazyColumnDefaults
 import androidx.wear.compose.foundation.lazy.items
 import androidx.wear.compose.material.Text
-import net.harutiro.nearbyconnectionsapitest.MainViewModel
 import androidx.wear.compose.foundation.lazy.rememberScalingLazyListState
 import androidx.wear.compose.material3.ScreenScaffold
 import androidx.wear.compose.material3.ScrollIndicator
@@ -52,6 +51,22 @@ fun MainScreen(viewModel: MainViewModel) {
                 Chip(
                     onClick = { viewModel.sendData("Wearからだよ") },
                     label = { Text("データ送信") },
+                    modifier = Modifier.fillMaxWidth(),
+                    colors = ChipDefaults.primaryChipColors()
+                )
+            }
+            item {
+                Chip(
+                    onClick = { viewModel.disconnectAll() },
+                    label = { Text("接続を切る") },
+                    modifier = Modifier.fillMaxWidth(),
+                    colors = ChipDefaults.primaryChipColors()
+                )
+            }
+            item {
+                Chip(
+                    onClick = { viewModel.resetAll() },
+                    label = { Text("リセット") },
                     modifier = Modifier.fillMaxWidth(),
                     colors = ChipDefaults.primaryChipColors()
                 )

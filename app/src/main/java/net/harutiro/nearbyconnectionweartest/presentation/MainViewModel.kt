@@ -1,11 +1,10 @@
-package net.harutiro.nearbyconnectionsapitest
+package net.harutiro.nearbyconnectionweartest.presentation
 
 import android.app.Activity
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
-import net.harutiro.nearbyconnectionsapitest.NearbyRepositoryCallback
 
 class MainViewModel(activity: Activity) : ViewModel(), NearbyRepositoryCallback {
     private val repository = NearbyRepository(activity, this)
@@ -18,6 +17,11 @@ class MainViewModel(activity: Activity) : ViewModel(), NearbyRepositoryCallback 
     fun startAdvertise() = repository.startAdvertise()
     fun startDiscovery() = repository.startDiscovery()
     fun sendData(text: String) = repository.sendData(text)
+    fun disconnectAll() = repository.disconnectAll()
+    fun resetAll() {
+        repository.resetAll()
+        receivedDataList = emptyList()
+    }
 
     override fun onConnectionStateChanged(state: String) {
         connectState = state

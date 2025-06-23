@@ -22,9 +22,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.wear.compose.material.MaterialTheme
 import androidx.wear.compose.material.Text
-import androidx.wear.compose.material.TimeText
 import androidx.wear.tooling.preview.devices.WearDevices
-import net.harutiro.nearbyconnectionsapitest.MainViewModel
 import net.harutiro.nearbyconnectionweartest.R
 import net.harutiro.nearbyconnectionweartest.presentation.theme.NearByConnectionWearTestTheme
 
